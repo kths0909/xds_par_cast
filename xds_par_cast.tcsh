@@ -2,11 +2,13 @@
 
 ###################################################################################
 ##                                                                               ##
-##	xds_par (casted)                                                         ##
-##                                                                               ##
-##	Please change the normal "xds_par" to "xds_par_normal".                  ##
-##                                                                               ##
-##      (command) mv xds_par xds_par_normal                                      ##
+##	xds_par_cast                                                             ##
+##	The directory for processing must be seen from the cluster machine	 ##
+##	in the same name.							 ##
+##      Rename this script to "xds_par" and the "xds_par" in your PATH           ##
+##	to "xds_par_normal", place new "xds_par" (script) in your PATH.          ##
+##      (command) mv `which xds_par` xds_par_normal                              ##
+##      (command) cp xds_par_cast.tcsh ${XDS_ROOT}/xds_par                       ##
 ##                                                                               ##
 ###################################################################################
 
@@ -15,7 +17,7 @@ set file_check="XDS.INP"
 if ( -e ${file_check} ) then
 ##############################
 
-set cluster_IP_address=hogehoge			##the IP address of your cluster machine.
+set cluster_IP_address=hogehoge			## <== Place the IP address of your cluster machine.
 
 set xdsinp_temp1=`mktemp`
 set xdsinp_temp2=`mktemp`
